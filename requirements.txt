@@ -1,0 +1,7 @@
+langchain_community
+pypdf
+sentence-transformers
+streamlit
+langchain-huggingface
+langchain_groq
+langchain_openai
