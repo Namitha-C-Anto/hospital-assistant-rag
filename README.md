@@ -185,12 +185,3 @@ LLM Application Engineering
 ## ⭐ Project Goal
 
 Build AI systems from foundational concepts instead of relying only on abstractions and frameworks, with focus on understanding retrieval systems, memory, orchestration, and production-oriented AI engineering.
-
-
-This README shows:
-- Current implementation clearly
-- Future roadmap
-- Engineering thinking
-- Your transition story without overselling
-
-It is strong for GitHub + recruiter viewing.
