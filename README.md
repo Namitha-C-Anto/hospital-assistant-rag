@@ -1,3 +1,14 @@
+itle: Hospital Assistant RAG
+emoji: 🚀
+colorFrom: red
+colorTo: red
+sdk: docker
+app_port: 8501
+tags:
+  - streamlit
+pinned: false
+short_description: AI-powered Hospital Assistant using RAG, FAISS vector search
+
 # 🏥 Conversational Hospital Assistant RAG
 
 AI-powered Hospital Assistant built using Retrieval-Augmented Generation (RAG) for hospital knowledge retrieval from PDF documents with conversational memory support.
