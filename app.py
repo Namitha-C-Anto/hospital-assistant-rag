@@ -47,7 +47,7 @@ if question:
     )
 
     results = retriever.invoke(
-        question
+        question.strip().upper()
     )
 
     context = "\n\n".join(
@@ -78,5 +78,21 @@ if question:
     save_chat(question, response.content)
 
     with st.expander("Retrieved Context"):
+        
         for doc in results:
+            
+            pdf_name = os.path.basename(
+                doc.metadata.get("source", "Unknown PDF")
+            ) 
+            
+            page_no = doc.metadata.get("page", "Unknown Page")
+            
+            st.write(
+                f"📄 PDF: {pdf_name}"
+            )
+            st.write(
+                f"📍Page: {page_no}"
+            )
+
             st.write(doc.page_content[:500])
+            st.divider()

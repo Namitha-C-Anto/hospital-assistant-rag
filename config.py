@@ -14,7 +14,7 @@ DB_PATH = os.path.join(BASE_DIR, "db", "faiss_index")
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
 # Text splitting
-CHUNK_SIZE = 1000
+CHUNK_SIZE = 800
 CHUNK_OVERLAP = 200
 
 # Retriever
