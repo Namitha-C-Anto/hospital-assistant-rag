@@ -1,13 +1,15 @@
-itle: Hospital Assistant RAG
+---
+title: Hospital Assistant RAG
 emoji: 🚀
 colorFrom: red
 colorTo: red
 sdk: docker
 app_port: 8501
 tags:
-  - streamlit
+- streamlit
 pinned: false
 short_description: AI-powered Hospital Assistant using RAG, FAISS vector search
+---
 
 # 🏥 Conversational Hospital Assistant RAG
 
