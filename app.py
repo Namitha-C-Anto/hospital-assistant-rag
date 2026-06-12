@@ -8,9 +8,8 @@ from prompts.prompt_template import prompt
 from memory.session_memory import get_chat_history, save_chat
 
 if not os.path.exists(DB_PATH):
-    st.error("⚠️ Please run build_db.py first")
-    st.stop()
-
+    import build_db
+    
 st.title(APP_TITLE)
 st.caption(SUB_TITLE)
 

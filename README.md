@@ -1,74 +1,71 @@
 ---
+
 title: Hospital Assistant RAG
 emoji: 🚀
 colorFrom: red
 colorTo: red
-sdk: docker
-app_port: 8501
-tags:
-- streamlit
+sdk: streamlit
+app_file: app.py
 pinned: false
-short_description: AI-powered Hospital Assistant using RAG, FAISS vector search
----
+short_description: AI-powered Hospital Assistant using RAG and FAISS vector search
+----------------------------------------------------------------------------------
 
 # 🏥 Conversational Hospital Assistant RAG
 
-AI-powered Hospital Assistant built using Retrieval-Augmented Generation (RAG) for hospital knowledge retrieval from PDF documents with conversational memory support.
+An AI-powered Hospital Assistant built using Retrieval-Augmented Generation (RAG) to answer hospital-related queries from PDF-based knowledge sources. The application combines semantic search, conversational memory, and Large Language Models (LLMs) to provide accurate, context-aware responses.
 
-The application allows users to ask hospital-related questions and receive context-aware answers generated using retrieved document information and conversation history.
+Users can interact with the assistant through a Streamlit-based chat interface and receive answers grounded in hospital documents while maintaining conversational continuity across follow-up questions.
 
 ---
 
 ## 🚀 Features
 
-✅ PDF document ingestion  
-✅ PDF chunking using Recursive Character Text Splitter  
-✅ Embeddings generation using HuggingFace Embeddings  
-✅ FAISS Vector Database for semantic search  
-✅ Conversational Retrieval-Augmented Generation (RAG)  
-✅ Chat memory for follow-up questions  
-✅ Streamlit chat interface  
-✅ Retrieved context visibility for debugging and transparency  
-✅ Modular project structure for scalability  
+* PDF document ingestion and processing
+* Text chunking using Recursive Character Text Splitter
+* Embedding generation using HuggingFace Embeddings
+* FAISS Vector Database for semantic similarity search
+* Conversational Retrieval-Augmented Generation (RAG)
+* Session-based chat memory for follow-up questions
+* Streamlit chat interface
+* Retrieved context visibility for transparency and debugging
+* Modular and scalable project architecture
 
 ---
 
 ## 🏗️ Architecture
 
-```
-
+```text
 PDF Documents
-↓
-Loader
-↓
-Text Splitter
-↓
-Embeddings
+      ↓
+    Loader
+      ↓
+ Text Splitter
+      ↓
+ Embeddings
 (HuggingFace)
-
-↓
-
+      ↓
 FAISS Vector Store
-↓
-Retriever
-↓
+      ↓
+   Retriever
+      ↓
 Retrieved Context
 
-Chat Memory
-↓
+ Chat Memory
+      ↓
+
 Prompt Template
 (Context + Memory + Question)
-↓
-LLM
-↓
-Response
+      ↓
+      LLM
+      ↓
+   Response
+```
 
 ---
 
-##📂 Project Structure
+## 📂 Project Structure
 
-```
-
+```text
 Hospital_Assistant/
 
 ├── app.py
@@ -78,123 +75,150 @@ Hospital_Assistant/
 ├── README.md
 │
 ├── docs/
-│ ├── infection_control.pdf
-│ ├── meningitis_diagnosis.pdf
-│ └── standard_treatment_guidelines.pdf
+│   ├── admission_and_discharge_process.pdf
+│   ├── appointment_booking_guide.pdf
+│   ├── department_directory.pdf
+│   ├── diagnostic_imaging_guide.pdf
+│   ├── hospital_services_brochure.pdf
+│   ├── infection_prevention_for_patients_and_visitors.pdf
+│   ├── laboratory_services_guide.pdf
+│   ├── patient_registration_guide.pdf
+│   ├── patient_rights_and_responsibilities.pdf
+│   ├── sunrise_multi_specialty_hospital.pdf
+│   └── visitor_guidelines.pdf
 │
 ├── db/
-│ └── faiss_index/
+│   └── faiss_index/
 │
 ├── rag/
-│ ├── loader.py
-│ ├── splitter.py
-│ ├── vectorstore.py
-│ └── retriever.py
+│   ├── loader.py
+│   ├── splitter.py
+│   ├── vectorstore.py
+│   └── retriever.py
 │
 ├── llm/
-│ └── llm.py
+│   └── llm.py
 │
 ├── memory/
-│ └── session_memory.py
+│   └── session_memory.py
 │
 └── prompts/
-└── prompt_template.py
+    └── prompt_template.py
+```
+
+---
 
 ## ⚙️ Technologies Used
-Python
-LangChain
-HuggingFace Embeddings
-FAISS
-Streamlit
-Retrieval-Augmented Generation (RAG)
-Conversational Memory
+
+* Python
+* LangChain
+* OpenAI GPT-4o Mini
+* HuggingFace Embeddings
+* FAISS Vector Database
+* Streamlit
+* Retrieval-Augmented Generation (RAG)
+* Conversational Memory
+
+---
 
 ## 🧠 Current Memory Implementation
 
-Current implementation uses session-based conversational memory:
+The application currently uses session-based conversational memory to maintain context throughout a user session.
 
-Stores previous questions and answers
-Supports follow-up questions
-Maintains conversation continuity
+### Capabilities
 
-Example:
+* Stores previous user questions and assistant responses
+* Supports follow-up questions using conversation history
+* Maintains conversational continuity across interactions
 
-
-User: What is meningitis?
-
-Assistant: ...
-
-User: What are its symptoms?
-
-Assistant understands "its" → meningitis
+---
 
 ## 🔧 Installation
 
-Clone repository:
+### Clone the Repository
 
+```bash
 git clone <your_repo_url>
-
 cd conversational-hospital-assistant-rag
+```
 
-Create virtual environment:
+### Create a Virtual Environment
 
+```bash
 python -m venv .venv
+```
 
-Activate environment:
+### Activate the Environment
 
-Windows:
+**Windows**
 
+```bash
 .venv\Scripts\activate
+```
 
-Install dependencies:
+### Install Dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
-## 📚 Build Vector Database
-
-Before running application:
-
-python build_db.py
-
-This will:
-
-Load PDF documents
-Split documents into chunks
-Generate embeddings
-Create and save FAISS vector database
+---
 
 ## ▶️ Run Application
+
+The vector database will be automatically created if it does not already exist.
+
+```bash
 streamlit run app.py
+```
+
+---
 
 ## 🎯 Example Questions
-What is meningitis?
-What are symptoms of anal fissure?
-Explain infection control measures.
-What are standard treatment guidelines?
+
+* How do I book an appointment at the hospital?
+* What documents are required for patient registration?
+* What services are available in the Radiology Department?
+* What laboratory services does the hospital provide?
+* What are the patient rights and responsibilities?
+* What are the hospital's visitor guidelines?
+* What infection prevention measures should patients and visitors follow?
+* What is the admission and discharge process?
+* Which departments are available in the hospital?
+* What diagnostic imaging services are offered?
+* Tell me about Sunrise Multi-Specialty Hospital.
+* What should I bring when visiting the hospital?
+
+---
 
 ## 🔮 Future Improvements
 
-Planned enhancements:
+Planned enhancements include:
 
-Buffer window memory (last N conversations)
-Conversation summarization
-Hybrid retrieval (Semantic + Keyword Search)
-History-aware retrieval
-SQL + PDF Router RAG
-Advanced memory retrieval systems
-Deployment optimization
+* Buffer window memory (last N conversations)
+* Conversation summarization
+* Hybrid retrieval (Semantic Search + Keyword Search)
+* History-aware retrieval
+* SQL + PDF Router RAG
+* Advanced memory retrieval systems
+* Agent-based retrieval workflows
+* Deployment optimization
+
+---
 
 ## 👩‍💻 Author
 
-Namitha C Anto
+**Namitha C Anto**
 
-SQL Backend Developer transitioning into AI Engineering with focus on:
+SQL Backend Developer transitioning into AI Engineering, with a focus on:
 
-Retrieval-Augmented Generation (RAG)
-Conversational AI
-Agentic AI Systems
-LLM Application Engineering
+* Retrieval-Augmented Generation (RAG)
+* Conversational AI
+* Agentic AI Systems
+* LLM Application Engineering
+
+---
 
 ## ⭐ Project Goal
 
-Build AI systems from foundational concepts instead of relying only on abstractions and frameworks, with focus on understanding retrieval systems, memory, orchestration, and production-oriented AI engineering.
+The goal of this project is to build AI systems from foundational concepts rather than relying solely on high-level abstractions and frameworks. The focus is on developing a deep understanding of retrieval systems, conversational memory, orchestration, and production-oriented AI engineering practices.

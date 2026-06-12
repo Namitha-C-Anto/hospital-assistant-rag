@@ -1,6 +1,5 @@
 import os
-from dotenv import load_dotenv
-from langsmith.client import _OPENAI_API_KEY
+from dotenv import load_dotenv 
 load_dotenv(override=True)
 
 # Base directory
