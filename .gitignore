@@ -4,8 +4,9 @@ __pycache__/
 .env
 
 # Vector DB if very large
-# vectorstore_db/
+db/faiss_index/
 
 # OS files
 .DS_Store
 Thumbs.db
+ 
