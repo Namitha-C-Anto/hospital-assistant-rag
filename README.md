@@ -10,6 +10,15 @@ pinned: false
 short_description: AI-powered Hospital Assistant using RAG and FAISS vector search
 ---
 
+## 🚀 Live Demo
+
+Experience the AI-powered Hospital Assistant built using Retrieval-Augmented Generation (RAG):
+
+👉 https://huggingface.co/spaces/NamithaC/Hospital-Assistant-RAG
+
+This system combines vector database retrieval with LLM-based generation to deliver context-aware medical responses.
+
+⚠️ Disclaimer: This project is for educational purposes only and should not be used for medical decision-making.
 
 # 🏥 Conversational Hospital Assistant RAG
 
