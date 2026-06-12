@@ -8,7 +8,8 @@ sdk: streamlit
 app_file: app.py
 pinned: false
 short_description: AI-powered Hospital Assistant using RAG and FAISS vector search
-----------------------------------------------------------------------------------
+---
+
 
 # 🏥 Conversational Hospital Assistant RAG
 
