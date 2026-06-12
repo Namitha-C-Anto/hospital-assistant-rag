@@ -1,7 +1,11 @@
-langchain_community
+streamlit
+
+langchain
+langchain-community
+langchain-openai
+langchain-huggingface
+
 pypdf
 sentence-transformers
-streamlit
-langchain-huggingface
-langchain_groq
-langchain_openai
+faiss-cpu
+python-dotenv
